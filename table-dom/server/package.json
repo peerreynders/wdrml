@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "0.1.0",
+  "scripts": {
+    "bsb-build": "bsb -make-world",
+    "bsb-watch": "bsb -make-world -w",
+    "bsb-clean": "bsb -clean-world",
+    "dist-clean": "rimraf ./dist",
+    "link-bs": "npm link bs-platform",
+    "format": "refmt --in-place ./src/*.re",
+    "clean": "npm run dist-clean && npm run bsb-clean",
+    "start": "node ./src/Server.bs.js",
+    "cp-client": "cpy '../client/dist/*' ./dist ",
+    "rebuild": "npm run clean && npm run bsb-build && npm run cp-client"
+  },
+  "keywords": [
+    "BuckleScript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@glennsl/bs-json": "^3.0.0",
+    "bs-express": "^0.9.0",
+    "cpy-cli": "^2.0.0",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "papaparse": "^4.6.2"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "scripts": {
+    "bsb-build": "bsb -make-world",
+    "bsb-watch": "bsb -make-world -w",
+    "bsb-clean": "bsb -clean-world",
+    "link-bs": "npm link bs-platform",
+    "dist-clean": "rimraf ./dist",
+    "format": "refmt --in-place ./src/*.re",
+    "parcel-build": "parcel build --target browser --no-minify --out-dir ./dist ./src/index.html",
+    "parcel-watch": "parcel serve --target browser --out-dir ./dist ./src/index.html",
+    "clean": "npm run dist-clean && npm run bsb-clean",
+    "build": "npm run bsb-build && npm run parcel-build",
+    "rebuild": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "BuckleScript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@glennsl/bs-json": "^3.0.0",
+    "bs-platform": "^4.0.7",
+    "bs-webapi": "^0.9.1",
+    "bs-xmlhttprequest": "^0.1.7",
+    "parcel-bundler": "^1.10.3",
+    "rimraf": "^2.6.2"
+  }
+}

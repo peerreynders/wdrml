@@ -1,0 +1,11 @@
+/* Original:
+   https://media.pragprog.com/titles/reasonml/code/interop/client/src/style.css
+ */
+table {
+  border:1px solid gray;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 0.25em;
+}
