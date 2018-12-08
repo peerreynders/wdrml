@@ -1,25 +1,23 @@
-# orders-storage
-A refactored version of the `shirt-storage` sample project from [Chapter 9: Making Applications with Reason/React](https://pragprog.com/book/reasonml/web-development-with-reasonml#toc) of [Web Development with ReasonML](https://pragprog.com/book/reasonml/web-development-with-reasonml) (ISBN: 978-1-68050-633-4). [`AppJson.re`](src/AppJson.re) and [`Storage.re`](src/Storage.re) are added to the `orders-edit` project.
+# orders-edit
+An implementation of the _It's Your Turn_ exercise which adds order editing capability to the `shirt-react` base project from [Chapter 9: Making Applications with Reason/React](https://pragprog.com/book/reasonml/web-development-with-reasonml#toc) of [Web Development with ReasonML](https://pragprog.com/book/reasonml/web-development-with-reasonml) (ISBN: 978-1-68050-633-4). In this case the refactored `orders-react` project was modified.
 
 Primary differences to the original:
-* [`OrderForm.re`](https://media.pragprog.com/titles/reasonml/code/reason-react/shirt-storage/src/OrderForm.re) has been split into container component [`Orders.re`](src/component/Orders.re) and presentational components [`OrderEditView.re`](src/component/OrderEditView.re), [`ErrorView.re`](src/component/ErrorView.re) and [`OrdersView.re`](src/component/Orders.re).
+* [`OrderForm.re`](https://media.pragprog.com/titles/reasonml/code/reason-react/shirt-react/src/OrderForm.re) has been split into container component [`Orders.re`](src/component/Orders.re) and presentational components [`OrderEditView.re`](src/component/OrderEditView.re), [`ErrorView.re`](src/component/ErrorView.re) and [`OrdersView.re`](src/component/Orders.re).
 * The presentational components are injected into the container component via render callbacks in [`Index.re`](src/Index.re).
-* [`Order.re`](src/Order.re) was extracted from [`Shirt.re`](https://media.pragprog.com/titles/reasonml/code/reason-react/shirt-storage/src/Shirt.re).
+* [`Order.re`](src/Order.re) was extracted from [`Shirt.re`](https://media.pragprog.com/titles/reasonml/code/reason-react/shirt-react/src/Shirt.re).
 * [`Action.re`](src/Action.re) was extracted from `OrderForm.re` to make the actions available to [`Index.re`](src/Index.re) to allow it to define quasi-action creators for the render callbacks.
 * [`State.re`](src/State.re) was extracted from `OrderForm.re` to make its structure available to the [`Index.re`](src/Index.re) `mapStateToProps`-style functionality. 
-* [`Storage.re`](src/Storage.re) was extracted from `OrderForm.re`.
-* JSON encoding/decoding functionality was consolidated in [`AppJson.re`](src/AppJson.re) from `OrderForm.re` and `Shirt.re`.
 
 Assumes BuckleScript 4.0.8 is globally installed.
 
 ## Building the bundle
 ```
 # install/link only for the first time
-orders-storage $ npm install
-orders-storage $ npm run link-bs
-orders-storage $ npm run rebuild
+orders-edit $ npm install
+orders-edit $ npm run link-bs
+orders-edit $ npm run rebuild
 ```
-In your file system locate `orders-storage/dist/index.html` and open it with a browser.
+In your file system locate `orders-edit/dist/index.html` and open it with a browser.
 
 ## Live reloading with [DevServer](https://webpack.js.org/configuration/dev-server/)
 

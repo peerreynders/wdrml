@@ -1,0 +1,36 @@
+{
+  "name": "orders-storage",
+  "version": "0.1.0",
+  "scripts": {
+    "bsb-build": "bsb -make-world",
+    "bsb-watch": "bsb -make-world -w",
+    "bsb-clean": "bsb -clean-world",
+    "link-bs": "npm link bs-platform",
+    "dist-clean": "rimraf ./dist",
+    "format": "refmt --in-place ./src/{,**/}*.re{,i}",
+    "webpack-dev": "webpack --env --config webpack.config.js",
+    "webpack-prod": "webpack --env.production --config webpack.config.js",
+    "webpack-server": "webpack-dev-server --env",
+    "clean": "npm run dist-clean && npm run bsb-clean",
+    "build": "npm run bsb-build && npm run webpack-dev",
+    "rebuild": "npm run clean && npm run bsb-build && npm run webpack-prod"
+  },
+  "keywords": [
+    "BuckleScript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "reason-react": "^0.5.3",
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}
