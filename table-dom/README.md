@@ -4,7 +4,7 @@ Two side-by-side `client` and `server` projects that serve a local DOM page Reas
 
 Based largely on the [Chapter 8: Connecting to JavaScript](https://pragprog.com/book/reasonml/web-development-with-reasonml#toc) client/server sample project from [Web Development with ReasonML](https://pragprog.com/book/reasonml/web-development-with-reasonml) (ISBN: 978-1-68050-633-4)
 
-Assumes BuckleScript 4.0.7 is globally installed.
+Assumes BuckleScript 4.0.8 is globally installed.
 
 ## Run it all from the server
 ```
