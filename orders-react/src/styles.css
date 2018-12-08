@@ -1,0 +1,12 @@
+td, th {
+  border: 1px solid black;
+  padding: 0.25em;
+}
+.flex { display: flex; }
+.item {
+  margin: 0.5em;
+}
+p.error {
+  font-weight: bold;
+  color: #800;
+}
